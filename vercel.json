@@ -2,11 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": "index.js"
-      }
+      "src": "api/index.js",
+      "use": "@vercel/node"
     },
     {
       "src": "frontend/package.json",
@@ -19,7 +16,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/index.js"
+      "dest": "/api/index.js"
     },
     {
       "handle": "filesystem"
