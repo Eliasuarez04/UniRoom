@@ -17,6 +17,4 @@ mongoose.connect(MONGO_URI)
 const aulasRouter = require('./routes/aulas');
 app.use('/api/aulas', aulasRouter);
 
-app.listen(PORT, () => {
-  console.log(`🚀 Servidor API corriendo en http://localhost:${PORT}`);
-});
+module.exports = app;
