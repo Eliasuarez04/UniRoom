@@ -6,30 +6,19 @@
       "use": "@vercel/node"
     },
     {
-      "src": "frontend/vue.config.js",
+      "src": "frontend/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "config": { "distDir": "dist" }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/index.js"
-    },
-    {
-      "src": "/_nuxt/(.*)", "dest": "/_nuxt/$1"
-    },
-    {
-      "src": "/assets/(.*)", "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*\\..*)", "dest": "/$1"
+      "dest": "api/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "frontend/dist/index.html"
     }
   ]
 }
