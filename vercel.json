@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "frontend/package.json",
+      "src": "frontend/vue.config.js",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
@@ -19,7 +19,13 @@
       "dest": "/api/index.js"
     },
     {
-      "handle": "filesystem"
+      "src": "/_nuxt/(.*)", "dest": "/_nuxt/$1"
+    },
+    {
+      "src": "/assets/(.*)", "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*\\..*)", "dest": "/$1"
     },
     {
       "src": "/(.*)",
